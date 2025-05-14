@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Legale Regalia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    .bordeaux {
+      color: #7A2C34;
+    }
+    .bg-bordeaux {
+      background-color: #7A2C34;
+    }
+    .hover\:text-bordeaux:hover {
+      color: #7A2C34;
+    }
+    .hover\:bg-bordeaux:hover {
+      background-color: #7A2C34;
+    }
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- Header -->
+<header class="bg-white shadow">
+  <div class="max-w-7xl mx-auto px-4 py-6">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 justify-center md:justify-start mb-4 md:mb-0">
+        <img src="Logo sito.png" alt="Logo Studio Legale Regalia" class="h-16 w-auto">
+        <h1 class="text-2xl md:text-3xl font-bold bordeaux text-center md:text-left">Studio Legale Regalia</h1>
+      </div>
+      <nav class="flex justify-center md:justify-end">
+        <ul class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 text-sm font-semibold text-center">
+          <li><a href="#chi-siamo" class="text-gray-700 hover:text-bordeaux">Chi siamo</a></li>
+          <li><a href="#aree" class="text-gray-700 hover:text-bordeaux">Aree di attività</a></li>
+          <li><a href="#contatti" class="text-gray-700 hover:text-bordeaux">Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
