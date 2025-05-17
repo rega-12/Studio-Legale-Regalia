@@ -7,14 +7,9 @@
   <meta name="description" content="Studio Legale Regalia - Avvocato Alberto Regalia. Diritto Bancario, Lavoro, Societario, Concorsuale, Privacy, Nuove Tecnologie. Assistenza legale per aziende e privati.">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
-    }
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
     .bordeaux { color: #7A2C34; }
     .bg-bordeaux { background-color: #7A2C34; }
     .border-bordeaux { border-color: #7A2C34; }
@@ -35,7 +30,6 @@
       box-shadow: 0 8px 32px rgba(122,44,52,0.08);
       transition: 0.2s all;
     }
-    /* Pulsante CTA fisso mobile */
     @media (max-width: 768px) {
       .cta-fixed-mobile {
         position: fixed;
@@ -47,12 +41,37 @@
         z-index: 50;
       }
     }
+    /* DARK MODE */
+    body.dark-mode {
+      background-color: #18181b !important;
+      color: #ececec !important;
+    }
+    body.dark-mode .bg-white,
+    body.dark-mode .bg-gray-50,
+    body.dark-mode .bg-gray-100 {
+      background-color: #232326 !important;
+    }
+    body.dark-mode .text-gray-900,
+    body.dark-mode .text-gray-800,
+    body.dark-mode .text-gray-700 {
+      color: #ececec !important;
+    }
+    body.dark-mode .bg-bordeaux { background-color: #7A2C34 !important; }
+    body.dark-mode .bordeaux, body.dark-mode .text-bordeaux { color: #ef476f !important; }
+    body.dark-mode .border-bordeaux { border-color: #ef476f !important; }
+    body.dark-mode .underline-bordeaux { border-bottom: 3px solid #ef476f !important; }
+    body.dark-mode header, body.dark-mode footer { background-color: #232326 !important; }
+    body.dark-mode a { color: #ef476f; }
+    body.dark-mode a:hover { color: #fff; }
+    body.dark-mode .shadow, body.dark-mode .shadow-lg { box-shadow: 0 2px 24px rgba(0,0,0,0.45)!important; }
+    body.dark-mode .bg-green-500 { background-color: #27c468 !important; }
+    body.dark-mode .hover\:bg-green-600:hover { background-color: #168f49 !important; }
+    body.dark-mode .border-green-600 { border-color: #168f49 !important; }
   </style>
 </head>
 <body class="bg-gray-50 text-bordeaux">
-
 <!-- Header -->
-<header class="bg-white shadow">
+<header class="bg-white shadow relative">
   <div class="max-w-7xl mx-auto px-4 py-6">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between">
       <div class="flex items-center space-x-4 justify-center md:justify-start mb-4 md:mb-0">
@@ -66,6 +85,10 @@
           <li><a href="#contatti" class="text-gray-700 hover:text-bordeaux">Contatti</a></li>
         </ul>
       </nav>
+      <!-- Switch Dark Mode -->
+      <button id="dark-toggle" aria-label="Attiva/disattiva modalità notte" class="absolute right-4 top-1/2 -translate-y-1/2 md:static md:ml-4 bg-bordeaux text-white px-3 py-2 rounded-full shadow transition hover:bg-white hover:text-bordeaux border-2 border-bordeaux flex items-center gap-2 z-50">
+        <span id="dark-toggle-icon">🌙</span>
+      </button>
     </div>
   </div>
 </header>
@@ -141,30 +164,62 @@
     <p class="text-lg text-gray-800 mb-2">Telefono: <a href="tel:0332283950" class="text-bordeaux font-semibold">0332 283950</a></p>
     <p class="text-lg text-gray-800 mb-2">PEC: <a href="mailto:alberto.regalia@pec.it" class="text-bordeaux font-semibold">alberto.regalia@pec.it</a></p>
     <p class="text-lg text-gray-800 mb-6">P.IVA: 03896420126</p>
-<div class="flex flex-col md:flex-row gap-4 justify-center items-center mt-8">
-  <a href="https://www.linkedin.com/in/alberto-regalia-40528579/" target="_blank" 
-     class="px-6 py-3 bg-bordeaux text-white rounded-full font-semibold shadow hover:bg-white hover:text-bordeaux border-2 border-bordeaux transition flex items-center gap-2">
-    <i class="fab fa-linkedin text-xl"></i>
-    LinkedIn
-  </a>
-  <a href="https://wa.me/393791190918" target="_blank"
-     class="px-6 py-3 bg-green-500 text-white rounded-full font-semibold shadow hover:bg-green-600 border-2 border-green-600 transition flex items-center gap-2">
-    <i class="fab fa-whatsapp text-xl"></i>
-    WhatsApp
-  </a>
-</div>
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-center mt-8">
+      <a href="https://www.linkedin.com/in/alberto-regalia-40528579/" target="_blank" 
+         class="px-6 py-3 bg-bordeaux text-white rounded-full font-semibold shadow hover:bg-white hover:text-bordeaux border-2 border-bordeaux transition flex items-center gap-2">
+        <!-- LinkedIn SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24" class="inline"><path d="M4.98 3.5C4.98 2.12 3.87 1 2.5 1S0 2.12 0 3.5 1.12 6 2.5 6 4.98 4.88 4.98 3.5zM.22 8h4.56V24H.22V8zm7.77 0h4.37v2.16h.06c.61-1.15 2.12-2.36 4.37-2.36 4.68 0 5.54 3.08 5.54 7.08V24h-4.65v-6.79c0-1.62-.03-3.7-2.25-3.7-2.26 0-2.61 1.77-2.61 3.59V24h-4.65V8z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://wa.me/393791190918" target="_blank"
+         class="px-6 py-3 bg-green-500 text-white rounded-full font-semibold shadow hover:bg-green-600 border-2 border-green-600 transition flex items-center gap-2">
+        <!-- WhatsApp SVG -->
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="currentColor" class="inline"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.549.767 4.934 2.215 6.992L4 29l7.195-2.172A12.942 12.942 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22.75c-1.97 0-3.88-.5-5.537-1.455l-.395-.228-4.27 1.29 1.315-4.105-.258-.399C5.126 18.242 4.5 16.654 4.5 15c0-6.349 5.151-11.5 11.5-11.5S27.5 8.651 27.5 15c0 6.349-5.151 11.5-11.5 11.5zm6.38-8.138c-.364-.182-2.163-1.067-2.498-1.19-.334-.121-.578-.182-.822.182-.243.363-.937 1.189-1.15 1.432-.212.242-.423.273-.787.09-.364-.182-1.538-.567-2.929-1.81-1.082-.966-1.813-2.16-2.028-2.524-.212-.363-.023-.559.16-.74.165-.163.364-.422.545-.635.182-.213.243-.364.364-.607.121-.243.061-.456-.03-.636-.09-.182-.812-1.96-1.113-2.675-.293-.703-.594-.61-.812-.621-.212-.008-.454-.009-.697-.009-.242 0-.637.09-.97.455-.334.364-1.27 1.241-1.27 3.014 0 1.774 1.298 3.489 1.478 3.733.181.242 2.542 3.874 6.163 5.273.861.298 1.532.474 2.057.603.863.208 1.648.178 2.27.108.692-.078 2.163-.883 2.468-1.736.304-.853.304-1.582.212-1.736-.091-.153-.334-.242-.697-.425z"></path></svg>
+        WhatsApp
+      </a>
+    </div>
   </div>
 </section>
-
 
 <!-- Footer -->
 <footer class="bg-bordeaux text-white text-center py-6 text-sm">
   <p>&copy; 2025 Studio Legale Regalia. Tutti i diritti riservati.</p>
   <div class="mt-2 space-x-4">
-    <a href="/privacy-policy.html" class="underline hover:text-gray-200">Privacy Policy</a>
+    <a href="privacy-policy.html" class="underline hover:text-gray-200">Privacy Policy</a>
     <span>|</span>
-    <a href="/cookie-policy.html" class="underline hover:text-gray-200">Cookie Policy</a>
+    <a href="cookie-policy.html" class="underline hover:text-gray-200">Cookie Policy</a>
   </div>
 </footer>
+
+
+<!-- Script per Dark Mode Switch -->
+<script>
+  // Funzione per applicare tema su caricamento
+  function setTheme(theme) {
+    if (theme === 'dark') {
+      document.body.classList.add('dark-mode');
+      document.getElementById('dark-toggle-icon').textContent = "☀️";
+    } else {
+      document.body.classList.remove('dark-mode');
+      document.getElementById('dark-toggle-icon').textContent = "🌙";
+    }
+  }
+
+  // Al caricamento pagina: applica preferenza utente o sistema
+  (function () {
+    let theme = localStorage.getItem('theme');
+    if (!theme) {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    setTheme(theme);
+  })();
+
+  // Gestisci click sul pulsante
+  document.getElementById('dark-toggle').addEventListener('click', function () {
+    const isDark = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    document.getElementById('dark-toggle-icon').textContent = isDark ? "☀️" : "🌙";
+  });
+</script>
 </body>
 </html>
