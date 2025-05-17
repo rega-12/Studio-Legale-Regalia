@@ -1,48 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Studio Legale Regalia</title>
+  <meta name="description" content="Studio Legale Regalia - Avvocato Alberto Regalia. Diritto Bancario, Lavoro, Societario, Concorsuale, Privacy, Nuove Tecnologie. Assistenza legale per aziende e privati.">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <style>
     body {
       font-family: 'Inter', sans-serif;
     }
-    h1, h2, h3 {
+    h1, h2, h3, h4 {
       font-family: 'Playfair Display', serif;
     }
-    .bordeaux {
-      color: #7A2C34;
-    }
-    .bg-bordeaux {
-      background-color: #7A2C34;
-    }
-    .hover\:text-bordeaux:hover {
-      color: #7A2C34;
-    }
-    .hover\:bg-bordeaux:hover {
-      background-color: #7A2C34;
-    }
-    .fade-in {
-      animation: fadeIn 1.5s ease-in-out;
-    }
+    .bordeaux { color: #7A2C34; }
+    .bg-bordeaux { background-color: #7A2C34; }
+    .border-bordeaux { border-color: #7A2C34; }
+    .hover\:text-bordeaux:hover { color: #7A2C34; }
+    .hover\:bg-bordeaux:hover { background-color: #7A2C34; }
+    .fade-in { animation: fadeIn 1.5s ease-in-out; }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .underline-bordeaux {
+      border-bottom: 3px solid #7A2C34;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+    .card-hover:hover {
+      transform: scale(1.025);
+      box-shadow: 0 8px 32px rgba(122,44,52,0.08);
+      transition: 0.2s all;
+    }
+    /* Pulsante CTA fisso mobile */
+    @media (max-width: 768px) {
+      .cta-fixed-mobile {
+        position: fixed;
+        bottom: 24px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 90%;
+        z-index: 50;
+      }
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-bordeaux">
 
 <!-- Header -->
 <header class="bg-white shadow">
   <div class="max-w-7xl mx-auto px-4 py-6">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between">
       <div class="flex items-center space-x-4 justify-center md:justify-start mb-4 md:mb-0">
-        <img src="logo-studio-legale-regalia.png" alt="Logo Studio Legale Regalia" class="h-16 w-auto">
+        <img src="logo-studio-legale-regalia.png" alt="Logo Studio Legale Regalia - Avvocato Alberto Regalia" class="h-16 w-auto">
         <h1 class="text-2xl md:text-3xl font-bold bordeaux text-center md:text-left">Studio Legale Regalia</h1>
       </div>
       <nav class="flex justify-center md:justify-end">
@@ -60,11 +73,13 @@
 <section class="relative bg-bordeaux py-32 text-white fade-in">
   <div class="max-w-4xl mx-auto px-4 text-center">
     <h2 class="text-5xl font-bold mb-6">Competenza e Tutela Legale</h2>
-    <p class="text-xl leading-relaxed">Dallo studio del caso 
-      alla difesa dei tuoi diritti. </p>
+    <p class="text-xl leading-relaxed mb-2">Studio focalizzato in Diritto Bancario, Lavoro, Societario, Concorsuale e Nuove Tecnologie.</p>
+    <p class="text-lg opacity-80 mb-8">Assistenza su misura per privati e imprese. Approccio concreto, riservato, multidisciplinare.</p>
+    <a href="#contatti" class="inline-block px-8 py-4 bg-white text-red-700 font-bold text-lg rounded-full shadow-lg hover:bg-red-700 hover:text-white border-2 border-red-700 hover:border-red-700 transition-all duration-300">Contattaci</a>
   </div>
 </section>
 
+<<<<<<< HEAD
 <section class="hidden md:block bg-white py-4 text-center fade-in">
   <a href="#contatti" class="px-8 py-4 bg-bordeaux text-white font-bold text-lg rounded-full shadow-lg hover:bg-white hover:text-bordeaux border-2 border-bordeaux transition-all duration-300">
     Contattaci
@@ -82,34 +97,63 @@
   </div>
 </section>
 <section id="aree" class="py-20 bg-gray-100 fade-in">
+=======
+
+<section id="aree" class="py-20 bg-gray-100 fade-in text-center">
+>>>>>>> 8748a9f159281d696a945255351ef8847d41bd02
   <div class="max-w-6xl mx-auto px-4">
-    <h3 class="text-3xl font-semibold mb-10 bordeaux text-center">Aree di attività</h3>
-    <div class="grid md:grid-cols-2 gap-10 text-lg justify-items-center text-center">
-      <div>
-        <ul class="space-y-4 text-gray-800">
-          <li><span class="font-bold">⚖️ Diritto Bancario</span></li>
-          <li><span class="font-bold">💼 Diritto del Lavoro</span></li>
-          <li><span class="font-bold">🏛️ Diritto Societario</span></li>
-          <li><span class="font-bold">📉 Diritto Concorsuale</span></li>
-          <li><span class="font-bold">🕵️ Normativa Whistleblowing e DPO</span></li>
-        </ul>
+    <h3 class="text-3xl font-semibold mb-10 bordeaux text-center underline-bordeaux">Aree di attività</h3>
+    <div class="grid md:grid-cols-2 gap-10">
+      <!-- Card 1 -->
+      <div class="bg-white shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
+        <h4 class="font-bold text-xl mb-2 bordeaux">Diritto Bancario</h4>
+        <p class="text-gray-700 text-base">Contenziosi bancari, anatocismo, usura, responsabilità degli istituti di credito, tutela dei risparmiatori.</p>
       </div>
-      <div>
-        <ul class="space-y-4 text-gray-800">
-          <li><span class="font-bold">🏢 Diritto Amministrativo</span></li>
-          <li><span class="font-bold">💰 Diritto Tributario e Fiscale</span></li>
-          <li><span class="font-bold">🖥️ Informatica e Nuove Tecnologie</span></li>
-          <li><span class="font-bold">🔍 Diritto Penale Commerciale</span></li>
-          <li><span class="font-bold">📸 Privacy, Immagine e Aste giudiziarie</span></li>
-        </ul>
+      <!-- Card 2 -->
+      <div class="bg-white shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
+        <h4 class="font-bold text-xl mb-2 bordeaux">Diritto del Lavoro</h4>
+        <p class="text-gray-700 text-base">Assistenza a lavoratori e aziende, licenziamenti, contratti, procedimenti disciplinari, infortuni.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-white shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
+        <h4 class="font-bold text-xl mb-2 bordeaux">Diritto Societario e Concorsuale</h4>
+        <p class="text-gray-700 text-base">Gestione crisi d’impresa, procedure concorsuali, responsabilità amministratori, compliance.</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="bg-white shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
+        <h4 class="font-bold text-xl mb-2 bordeaux">Whistleblowing, Privacy e Nuove Tecnologie</h4>
+        <p class="text-gray-700 text-base">Consulenza su privacy, DPO, digitalizzazione, tutela dell’immagine, normativa whistleblowing e aste giudiziarie.</p>
+      </div>
+      <!-- Card 5 -->
+      <div class="bg-white shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
+        <h4 class="font-bold text-xl mb-2 bordeaux">Diritto Amministrativo e Tributario</h4>
+        <p class="text-gray-700 text-base">Assistenza in diritto amministrativo, appalti pubblici, fiscalità e contenzioso tributario.</p>
+      </div>
+      <!-- Card 6 -->
+      <div class="bg-white shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
+        <h4 class="font-bold text-xl mb-2 bordeaux">Diritto Penale Commerciale</h4>
+        <p class="text-gray-700 text-base">Difesa in procedimenti penali collegati all’attività d’impresa, reati tributari e societari.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Chi siamo -->
+<section id="chi-siamo" class="py-16 bg-white fade-in text-center">
+  <div class="max-w-4xl mx-auto px-4">
+    <h3 class="text-3xl font-semibold mb-6 bordeaux text-center underline-bordeaux">Chi siamo</h3>
+    <p class="text-gray-700 text-lg leading-relaxed text-justify">
+      Lo Studio Legale Regalia offre consulenza e assistenza giudiziale e stragiudiziale nei principali settori del diritto, con particolare attenzione a Diritto Bancario, Societario, Concorsuale, Privacy e Nuove Tecnologie. 
+      <br><br>
+      L’Avv. Alberto Regalia segue personalmente ogni pratica, assicurando tempestività, riservatezza e soluzioni concrete. Lo Studio opera in favore di aziende, professionisti e privati, garantendo formazione continua e un approccio multidisciplinare.
+    </p>
+  </div>
+</section>
+
+<!-- Contatti -->
 <section id="contatti" class="py-20 bg-white fade-in">
   <div class="max-w-4xl mx-auto px-4 text-center">
-    <h3 class="text-3xl font-semibold mb-6 bordeaux">Contatti</h3>
+    <h3 class="text-3xl font-semibold mb-6 bordeaux underline-bordeaux">Contatti</h3>
     <p class="text-lg text-gray-800 mb-2">Email: <a href="mailto:alberto@studioregalia.org" class="text-bordeaux font-semibold">alberto@studioregalia.org</a></p>
     <p class="text-lg text-gray-800 mb-2">Telefono: <a href="tel:0332283950" class="text-bordeaux font-semibold">0332 283950</a></p>
     <p class="text-lg text-gray-800 mb-2">PEC: <a href="mailto:alberto.regalia@pec.it" class="text-bordeaux font-semibold">alberto.regalia@pec.it</a></p>
@@ -118,13 +162,24 @@
   </div>
 </section>
 
+<!-- CTA fissa mobile -->
+<a href="#contatti" class="cta-fixed-mobile md:hidden inline-block px-8 py-4 bg-bordeaux text-white font-bold text-lg rounded-full shadow-lg hover:bg-white hover:text-bordeaux border-2 border-bordeaux text-center transition-all duration-300">
+  Contattaci Subito
+</a>
+
+<!-- Footer -->
 <footer class="bg-bordeaux text-white text-center py-6 text-sm">
   <p>&copy; 2025 Studio Legale Regalia. Tutti i diritti riservati.</p>
+<<<<<<< HEAD
   <div class="mt-2 space-x-4">
     <a href="/privacy-policy.html" class="underline hover:text-gray-200">Privacy Policy</a>
     <span>|</span>
     <a href="/cookie-policy.html" class="underline hover:text-gray-200">Cookie Policy</a>
   </div>
+=======
+  <p class="mt-2">
+  </p>
+>>>>>>> 8748a9f159281d696a945255351ef8847d41bd02
 </footer>
 </body>
 </html>
