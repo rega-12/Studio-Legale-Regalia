@@ -14,11 +14,11 @@
   <style>
     body { font-family: 'Montserrat', Arial, sans-serif; }
     h1, h2, h3, h4 { font-family: 'Montserrat', Arial, sans-serif; }
-    .bordeaux { color: #7A2C34; }
-    .bg-bordeaux { background-color: #7A2C34; }
-    .border-bordeaux { border-color: #7A2C34; }
-    .hover\:text-bordeaux:hover { color: #7A2C34; }
-    .hover\:bg-bordeaux:hover { background-color: #7A2C34; }
+    .bordeaux, .text-bordeaux { color: #7A2C34 !important; }
+    .bg-bordeaux { background-color: #7A2C34 !important; }
+    .border-bordeaux { border-color: #7A2C34 !important; }
+    .hover\:text-bordeaux:hover { color: #7A2C34 !important; }
+    .hover\:bg-bordeaux:hover { background-color: #7A2C34 !important; }
     .fade-in { animation: fadeIn 1.5s ease-in-out; }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px);}
@@ -60,41 +60,104 @@
     body.dark-mode .text-gray-700 {
       color: #ececec !important;
     }
+    body.dark-mode .bordeaux, body.dark-mode .text-bordeaux { color: #7A2C34 !important; }
     body.dark-mode .bg-bordeaux { background-color: #7A2C34 !important; }
-    body.dark-mode .bordeaux, body.dark-mode .text-bordeaux { color: #ef476f !important; }
-    body.dark-mode .border-bordeaux { border-color: #ef476f !important; }
-    body.dark-mode .underline-bordeaux { border-bottom: 3px solid #ef476f !important; }
-    body.dark-mode header, body.dark-mode footer { background-color: #232326 !important; }
-    body.dark-mode a { color: #ef476f; }
-    body.dark-mode a:hover { color: #fff; }
-    body.dark-mode .shadow, body.dark-mode .shadow-lg { box-shadow: 0 2px 24px rgba(0,0,0,0.45)!important; }
-    body.dark-mode .bg-green-500 { background-color: #27c468 !important; }
-    body.dark-mode .hover\:bg-green-600:hover { background-color: #168f49 !important; }
-    body.dark-mode .border-green-600 { border-color: #168f49 !important; }
+    body.dark-mode .border-bordeaux { border-color: #7A2C34 !important; }
+    body.dark-mode .underline-bordeaux { border-bottom: 3px solid #7A2C34 !important; }
+    body.dark-mode header, body.dark-mode footer { background-color: #232326cc !important; }
+    body.dark-mode nav ul li a { color: #ececec !important; }
+    body.dark-mode nav ul li a:hover { color: #7A2C34 !important; }
+    body.dark-mode .card-hover:hover {
+      box-shadow: 0 8px 32px rgba(122,44,52,0.15);
+      transform: scale(1.03);
+    }
+    body.dark-mode .shadow, body.dark-mode .shadow-lg { box-shadow: 0 2px 24px rgba(0,0,0,0.7)!important; }
+    /* Migliora logo su mobile */
+    @media (max-width: 640px) {
+      .logo-mobile { height: 40px !important; }
+    }
+    /* Navbar sticky effetto blur */
+    header.sticky-blur {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    /* Pulsante switch */
+    .switch-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border: 2px solid #7A2C34;
+      border-radius: 1.5rem;
+      padding: 6px 10px;
+      cursor: pointer;
+      transition: background 0.2s, border 0.2s;
+      outline: none;
+      min-width: 40px;
+      min-height: 40px;
+    }
+    .switch-btn svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      stroke: #7A2C34;
+      fill: none;
+      transition: stroke 0.2s;
+    }
+    .switch-btn.active, .switch-btn:hover {
+      background: #7A2C34;
+    }
+    .switch-btn.active svg, .switch-btn:hover svg {
+      stroke: #fff;
+    }
+    body.dark-mode .switch-btn {
+      background: #232326;
+      border-color: #7A2C34;
+    }
+    body.dark-mode .switch-btn svg {
+      stroke: #7A2C34;
+      fill: none;
+    }
+    body.dark-mode .switch-btn.active,
+    body.dark-mode .switch-btn:hover {
+      background: #7A2C34;
+    }
+    body.dark-mode .switch-btn.active svg,
+    body.dark-mode .switch-btn:hover svg {
+      stroke: #fff;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-bordeaux">
 
 <!-- Header -->
-<header class="bg-white shadow relative">
-  <div class="max-w-7xl mx-auto px-4 py-6">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-      <div class="flex items-center space-x-4 justify-center md:justify-start mb-4 md:mb-0">
-        <img src="logo-studio-legale-regalia.png" alt="Logo Studio Legale Regalia - Avvocato Alberto Regalia" class="h-16 w-auto">
-        <h1 class="text-2xl md:text-3xl font-bold bordeaux text-center md:text-left">Studio Legale Regalia</h1>
-      </div>
-      <nav class="flex justify-center md:justify-end">
-        <ul class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 text-sm font-semibold text-center">
-          <li><a href="#chi-siamo" class="text-gray-700 hover:text-bordeaux">Chi siamo</a></li>
-          <li><a href="#aree" class="text-gray-700 hover:text-bordeaux">Aree di attività</a></li>
-          <li><a href="#contatti" class="text-gray-700 hover:text-bordeaux">Contatti</a></li>
-        </ul>
-      </nav>
-      <!-- Switch Dark Mode -->
-      <button id="dark-toggle" aria-label="Attiva/disattiva modalità notte" class="absolute right-4 top-1/2 -translate-y-1/2 md:static md:ml-4 bg-bordeaux text-white px-3 py-2 rounded-full shadow transition hover:bg-white hover:text-bordeaux border-2 border-bordeaux flex items-center gap-2 z-50">
-        <span id="dark-toggle-icon">🌙</span>
-      </button>
+<header class="bg-white dark:bg-[#232326]/90 shadow-lg sticky top-0 z-50 sticky-blur transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row md:items-center md:justify-between">
+    <div class="flex items-center space-x-4 mb-4 md:mb-0 justify-center md:justify-start">
+      <img src="logo-studio-legale-regalia.png" alt="Logo Studio Legale Regalia" class="h-12 md:h-16 w-auto transition-all duration-300 logo-mobile">
+      <h1 class="text-2xl md:text-3xl font-bold bordeaux text-center md:text-left transition-colors duration-300">Studio Legale Regalia</h1>
     </div>
+    <nav>
+      <ul class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 text-sm font-semibold text-center">
+        <li><a href="#chi-siamo" class="text-gray-700 dark:text-gray-200 hover:text-bordeaux transition-colors">Chi siamo</a></li>
+        <li><a href="#aree" class="text-gray-700 dark:text-gray-200 hover:text-bordeaux transition-colors">Aree di attività</a></li>
+        <li><a href="#contatti" class="text-gray-700 dark:text-gray-200 hover:text-bordeaux transition-colors">Contatti</a></li>
+      </ul>
+    </nav>
+    <!-- Switch Dark Mode -->
+<button id="dark-toggle" aria-label="Attiva/disattiva modalità notte" class="ml-4 switch-btn" type="button">
+  <!-- Sun Icon -->
+  <span id="icon-sun" style="display:none;">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" stroke-width="2"/><g stroke-width="2"><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/></g></svg>
+  </span>
+  <!-- Moon Icon -->
+  <span id="icon-moon">
+    <svg viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 12.75A9 9 0 1 1 11.25 3a7 7 0 1 0 9.75 9.75z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>
+
   </div>
 </header>
 
@@ -112,7 +175,7 @@
 <section id="chi-siamo" class="py-16 bg-white fade-in text-center">
   <div class="max-w-4xl mx-auto px-4">
     <h3 class="text-3xl font-semibold mb-6 bordeaux text-center underline-bordeaux">Chi siamo</h3>
-    <p class="text-gray-700 text-lg leading-relaxed text-justify">
+    <p class="text-gray-700 dark:text-gray-200 text-lg leading-relaxed text-justify">
       Lo Studio Legale Regalia offre consulenza e assistenza giudiziale e stragiudiziale nei principali settori del diritto, con particolare attenzione a Diritto Bancario, Societario, Concorsuale, Privacy e Nuove Tecnologie. 
       <br><br>
       L’Avv. Alberto Regalia segue personalmente ogni pratica, assicurando tempestività, riservatezza e soluzioni concrete. Lo Studio opera in favore di aziende, professionisti e privati, garantendo formazione continua e un approccio multidisciplinare.
@@ -120,52 +183,52 @@
   </div>
 </section>
 
-<section id="aree" class="py-20 bg-gray-100 fade-in text-center">
+<section id="aree" class="py-20 bg-gray-100 dark:bg-[#232326] fade-in text-center">
   <div class="max-w-6xl mx-auto px-4">
     <h3 class="text-3xl font-semibold mb-10 bordeaux text-center underline-bordeaux">Aree di attività</h3>
     <div class="grid md:grid-cols-2 gap-10">
       <!-- Card 1 -->
-      <div class="bg-white shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
+      <div class="bg-white dark:bg-[#232326] shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
         <h4 class="font-bold text-xl mb-2 bordeaux">Diritto Bancario</h4>
-        <p class="text-gray-700 text-base text-justify">Contenziosi bancari, anatocismo, usura, responsabilità degli istituti di credito, tutela dei risparmiatori.</p>
+        <p class="text-gray-700 dark:text-gray-200 text-base text-justify">Contenziosi bancari, anatocismo, usura, responsabilità degli istituti di credito, tutela dei risparmiatori.</p>
       </div>
       <!-- Card 2 -->
-      <div class="bg-white shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
+      <div class="bg-white dark:bg-[#232326] shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
         <h4 class="font-bold text-xl mb-2 bordeaux">Diritto del Lavoro</h4>
-        <p class="text-gray-700 text-base text-justify">Assistenza a lavoratori e aziende, licenziamenti, contratti, procedimenti disciplinari, infortuni.</p>
+        <p class="text-gray-700 dark:text-gray-200 text-base text-justify">Assistenza a lavoratori e aziende, licenziamenti, contratti, procedimenti disciplinari, infortuni.</p>
       </div>
       <!-- Card 3 -->
-      <div class="bg-white shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
+      <div class="bg-white dark:bg-[#232326] shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
         <h4 class="font-bold text-xl mb-2 bordeaux">Diritto Societario e Concorsuale</h4>
-        <p class="text-gray-700 text-base text-justify">Gestione crisi d’impresa, procedure concorsuali, responsabilità amministratori, compliance.</p>
+        <p class="text-gray-700 dark:text-gray-200 text-base text-justify">Gestione crisi d’impresa, procedure concorsuali, responsabilità amministratori, compliance.</p>
       </div>
       <!-- Card 4 -->
-      <div class="bg-white shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
+      <div class="bg-white dark:bg-[#232326] shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
         <h4 class="font-bold text-xl mb-2 bordeaux">Whistleblowing, Privacy e Nuove Tecnologie</h4>
-        <p class="text-gray-700 text-base text-justify">Consulenza su privacy, DPO, digitalizzazione, tutela dell’immagine, normativa whistleblowing e aste giudiziarie.</p>
+        <p class="text-gray-700 dark:text-gray-200 text-base text-justify">Consulenza su privacy, DPO, digitalizzazione, tutela dell’immagine, normativa whistleblowing e aste giudiziarie.</p>
       </div>
       <!-- Card 5 -->
-      <div class="bg-white shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
+      <div class="bg-white dark:bg-[#232326] shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
         <h4 class="font-bold text-xl mb-2 bordeaux">Diritto Amministrativo e Tributario</h4>
-        <p class="text-gray-700 text-base text-justify">Assistenza in diritto amministrativo, appalti pubblici, fiscalità e contenzioso tributario.</p>
+        <p class="text-gray-700 dark:text-gray-200 text-base text-justify">Assistenza in diritto amministrativo, appalti pubblici, fiscalità e contenzioso tributario.</p>
       </div>
       <!-- Card 6 -->
-      <div class="bg-white shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
+      <div class="bg-white dark:bg-[#232326] shadow rounded-2xl p-7 border-t-4 border-bordeaux card-hover transition-all duration-300">
         <h4 class="font-bold text-xl mb-2 bordeaux">Diritto Penale Commerciale</h4>
-        <p class="text-gray-700 text-base text-justify">Difesa in procedimenti penali collegati all’attività d’impresa, reati tributari e societari.</p>
+        <p class="text-gray-700 dark:text-gray-200 text-base text-justify">Difesa in procedimenti penali collegati all’attività d’impresa, reati tributari e societari.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Contatti -->
-<section id="contatti" class="py-20 bg-white fade-in">
+<section id="contatti" class="py-20 bg-white dark:bg-[#232326] fade-in">
   <div class="max-w-4xl mx-auto px-4 text-center">
     <h3 class="text-3xl font-semibold mb-6 bordeaux underline-bordeaux">Contatti</h3>
-    <p class="text-lg text-gray-800 mb-2">Email: <a href="mailto:info@studioregalia.org" class="text-bordeaux font-semibold">info@studioregalia.org</a></p>
-    <p class="text-lg text-gray-800 mb-2">Telefono: <a href="tel:0332283950" class="text-bordeaux font-semibold">0332 283950</a></p>
-    <p class="text-lg text-gray-800 mb-2">PEC: <a href="mailto:alberto.regalia@pec.it" class="text-bordeaux font-semibold">alberto.regalia@pec.it</a></p>
-    <p class="text-lg text-gray-800 mb-6">P.IVA: 03896420126</p>
+    <p class="text-lg text-gray-800 dark:text-gray-200 mb-2">Email: <a href="mailto:info@studioregalia.org" class="text-bordeaux font-semibold">info@studioregalia.org</a></p>
+    <p class="text-lg text-gray-800 dark:text-gray-200 mb-2">Telefono: <a href="tel:0332283950" class="text-bordeaux font-semibold">0332 283950</a></p>
+    <p class="text-lg text-gray-800 dark:text-gray-200 mb-2">PEC: <a href="mailto:alberto.regalia@pec.it" class="text-bordeaux font-semibold">alberto.regalia@pec.it</a></p>
+    <p class="text-lg text-gray-800 dark:text-gray-200 mb-6">P.IVA: 03896420126</p>
     <div class="flex flex-col md:flex-row gap-4 justify-center items-center mt-8">
       <a href="https://www.linkedin.com/in/alberto-regalia-40528579/" target="_blank" 
          class="px-6 py-3 bg-bordeaux text-white rounded-full font-semibold shadow hover:bg-white hover:text-bordeaux border-2 border-bordeaux transition flex items-center gap-2">
@@ -184,7 +247,7 @@
 </section>
 
 <!-- Footer -->
-<footer class="bg-bordeaux text-white text-center py-6 text-sm">
+<footer class="bg-bordeaux dark:bg-[#232326cc] text-white text-center py-6 text-sm">
   <p>&copy; 2025 Studio Legale Regalia. Tutti i diritti riservati.</p>
   <div class="mt-2 space-x-4">
     <a href="privacy-policy.html" class="underline hover:text-gray-200">Privacy Policy</a>
@@ -199,10 +262,14 @@
   function setTheme(theme) {
     if (theme === 'dark') {
       document.body.classList.add('dark-mode');
-      document.getElementById('dark-toggle-icon').textContent = "☀️";
+      document.getElementById('icon-sun').style.display = '';
+      document.getElementById('icon-moon').style.display = 'none';
+      document.getElementById('dark-toggle').classList.add('active');
     } else {
       document.body.classList.remove('dark-mode');
-      document.getElementById('dark-toggle-icon').textContent = "🌙";
+      document.getElementById('icon-sun').style.display = 'none';
+      document.getElementById('icon-moon').style.display = '';
+      document.getElementById('dark-toggle').classList.remove('active');
     }
   }
 
@@ -217,9 +284,9 @@
 
   // Gestisci click sul pulsante
   document.getElementById('dark-toggle').addEventListener('click', function () {
-    const isDark = document.body.classList.toggle('dark-mode');
+    const isDark = !document.body.classList.contains('dark-mode');
+    setTheme(isDark ? 'dark' : 'light');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    document.getElementById('dark-toggle-icon').textContent = isDark ? "☀️" : "🌙";
   });
 </script>
 </body>
