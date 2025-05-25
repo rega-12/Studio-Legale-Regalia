@@ -4,75 +4,143 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cookie Policy - Studio Legale Regalia</title>
-  <!-- Montserrat font -->
+  <meta name="description" content="Cookie policy del sito Studio Legale Regalia: uso esclusivo di cookie tecnici, nessun tracciamento né profilazione.">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Cookie Policy",
+    "url": "https://www.studioregalia.org/cookie-policy.html"
+  }
+  </script>
   <style>
     body { font-family: 'Montserrat', Arial, sans-serif; }
     h1, h2, h3 { font-family: 'Montserrat', Arial, sans-serif; }
-    .bordeaux { color: #7A2C34; }
-    .bg-bordeaux { background-color: #7A2C34; }
-    .hover\:text-bordeaux:hover { color: #7A2C34; }
-    .hover\:bg-bordeaux:hover { background-color: #7A2C34; }
+    .bordeaux, .text-bordeaux { color: #7A2C34 !important; }
+    .bg-bordeaux { background-color: #7A2C34 !important; }
+    .hover\:text-bordeaux:hover { color: #7A2C34 !important; }
+    .hover\:bg-bordeaux:hover { background-color: #7A2C34 !important; }
+    .underline-bordeaux { border-bottom: 3px solid #7A2C34; display: inline-block; padding-bottom: 4px;}
+    .fade-in { animation: fadeIn 1.5s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+    @media (max-width: 640px) { .logo-mobile { height: 40px !important; } }
+    body.dark-mode { background-color: #18181b !important; color: #ececec !important; }
+    body.dark-mode .bg-white, body.dark-mode .bg-gray-50 { background-color: #232326 !important; }
+    body.dark-mode .text-gray-900, body.dark-mode .text-gray-800 { color: #ececec !important; }
+    body.dark-mode .bordeaux, body.dark-mode .text-bordeaux { color: #7A2C34 !important; }
+    body.dark-mode .bg-bordeaux { background-color: #7A2C34 !important; }
+    body.dark-mode header, body.dark-mode footer { background-color: #232326cc !important; }
+    body.dark-mode nav ul li a { color: #ececec !important; }
+    body.dark-mode nav ul li a:hover { color: #7A2C34 !important; }
+    .switch-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border: 2px solid #7A2C34;
+      border-radius: 9999px;
+      padding: 6px 10px;
+      cursor: pointer;
+      transition: background 0.2s, border 0.2s;
+      outline: none;
+      min-width: 40px;
+      min-height: 40px;
+      width: 40px;
+      height: 40px;
+    }
+    .switch-btn svg { display: block; width: 22px; height: 22px; stroke: #7A2C34; fill: none; transition: stroke 0.2s; }
+    .switch-btn.active, .switch-btn:hover { background: #7A2C34; }
+    .switch-btn.active svg, .switch-btn:hover svg { stroke: #fff; }
+    body.dark-mode .switch-btn { background: #232326; border-color: #7A2C34; }
+    body.dark-mode .switch-btn svg { stroke: #7A2C34; fill: none; }
+    body.dark-mode .switch-btn.active, body.dark-mode .switch-btn:hover { background: #7A2C34; }
+    body.dark-mode .switch-btn.active svg, body.dark-mode .switch-btn:hover svg { stroke: #fff; }
+    @media (max-width: 640px) {
+      .switch-btn { padding: 0; min-width: 36px; min-height: 36px; width: 36px; height: 36px; }
+      .switch-btn svg { width: 20px; height: 20px; }
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
 <!-- Header -->
-<header class="bg-white shadow">
-  <div class="max-w-7xl mx-auto px-4 py-6">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-      <div class="flex items-center space-x-4 justify-center md:justify-start mb-4 md:mb-0">
-        <a href="index.html" class="flex items-center space-x-4">
-          <img src="logo-studio-legale-regalia.png" alt="Logo Studio Legale Regalia" class="h-16 w-auto">
-          <span class="font-bold text-2xl md:text-3xl bordeaux">Studio Legale Regalia</span>
-        </a>
-      </div>
-      <nav class="flex justify-center md:justify-end">
-        <ul class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 text-sm font-semibold text-center">
-          <li><a href="index.html#chi-siamo" class="text-gray-700 hover:text-bordeaux">Chi siamo</a></li>
-          <li><a href="index.html#aree" class="text-gray-700 hover:text-bordeaux">Aree di attività</a></li>
-          <li><a href="index.html#contatti" class="text-gray-700 hover:text-bordeaux">Contatti</a></li>
-        </ul>
-      </nav>
+<header class="bg-white dark:bg-[#232326]/90 shadow-lg transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col items-center md:flex-row md:items-center md:justify-between">
+    <div class="flex flex-col items-center md:flex-row md:space-x-4 md:mb-0 mb-2 w-full md:w-auto">
+      <a href="index.html">
+        <img src="logo-studio-legale-regalia.png" alt="Logo Studio Legale Regalia" class="h-12 w-auto mb-2 md:mb-0 logo-mobile">
+      </a>
+      <h1 class="text-xl md:text-3xl font-bold bordeaux text-center md:text-left whitespace-nowrap">Studio Legale Regalia</h1>
+    </div>
+    <nav class="mb-2 md:mb-0">
+      <ul class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 text-sm font-semibold text-center">
+        <li><a href="index.html#chi-siamo" class="text-gray-700 dark:text-gray-200 hover:text-bordeaux transition-colors">Chi siamo</a></li>
+        <li><a href="index.html#aree" class="text-gray-700 dark:text-gray-200 hover:text-bordeaux transition-colors">Aree di attività</a></li>
+        <li><a href="index.html#contatti" class="text-gray-700 dark:text-gray-200 hover:text-bordeaux transition-colors">Contatti</a></li>
+      </ul>
+    </nav>
+    <div class="w-full flex justify-center md:w-auto md:block mt-2 md:mt-0">
+      <button id="dark-toggle" aria-label="Attiva/disattiva modalità notte" class="switch-btn" type="button">
+        <span id="icon-sun" style="display:none;">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" stroke-width="2"/><g stroke-width="2"><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/></g></svg>
+        </span>
+        <span id="icon-moon">
+          <svg viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 12.75A9 9 0 1 1 11.25 3a7 7 0 1 0 9.75 9.75z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
 </header>
 
-<div class="max-w-3xl mx-auto py-12 px-4 bg-white rounded-lg shadow mt-8">
-  <h1 class="text-3xl font-bold bordeaux mb-6">Cookie Policy</h1>
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb" class="max-w-4xl mx-auto px-4 py-3 text-sm" itemscope itemtype="https://schema.org/BreadcrumbList">
+  <ol class="list-reset flex text-gray-700 dark:text-gray-200">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="index.html" itemprop="item"><span itemprop="name">Home</span></a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li class="mx-2">/</li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name" class="text-bordeaux font-semibold">Cookie Policy</span>
+      <meta itemprop="position" content="2" />
+    </li>
+  </ol>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="max-w-3xl mx-auto py-12 px-4 bg-white dark:bg-[#232326] rounded-lg shadow fade-in mt-8 mb-8">
+  <h1 class="text-3xl font-bold bordeaux mb-6 underline-bordeaux">Cookie Policy</h1>
   <p class="mb-4 text-justify">
     Questo sito utilizza esclusivamente cookie tecnici necessari al corretto funzionamento delle pagine e per migliorare l’esperienza di navigazione dell’utente.
   </p>
-
   <h2 class="text-2xl font-semibold mt-6 mb-2">Cosa sono i cookie?</h2>
   <p class="mb-4 text-justify">
     I cookie sono piccoli file di testo che i siti visitati inviano al dispositivo dell’utente, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti in occasione di visite successive.
   </p>
-
   <h2 class="text-2xl font-semibold mt-6 mb-2">Tipologie di cookie utilizzati</h2>
   <ul class="list-disc pl-5 mb-4 text-justify">
     <li>Cookie tecnici: indispensabili per consentire la normale navigazione e fruizione del sito.</li>
-    <li>Non vengono utilizzati cookie di profilazione né cookie analitici di terze parti.</li>
+    <li>Non vengono utilizzati cookie di profilazione, cookie analitici o cookie di terze parti.</li>
   </ul>
-
   <h2 class="text-2xl font-semibold mt-6 mb-2">Gestione dei cookie</h2>
   <p class="mb-4 text-justify">
     L’utente può gestire o disabilitare i cookie modificando le impostazioni del proprio browser. La disabilitazione dei cookie tecnici potrebbe compromettere alcune funzionalità del sito e l’esperienza di navigazione.
   </p>
-
   <h2 class="text-2xl font-semibold mt-6 mb-2">Modifiche alla cookie policy</h2>
   <p class="mb-4 text-justify">
     La presente cookie policy può essere aggiornata in qualsiasi momento. Eventuali modifiche saranno pubblicate su questa pagina.
   </p>
-
-  <p class="mt-8 text-sm text-gray-500">Ultimo aggiornamento: maggio 2025</p>
+  <p class="mt-8 text-sm text-gray-500 dark:text-gray-400">Ultimo aggiornamento: maggio 2025</p>
 </div>
 
 <!-- Footer -->
-<footer class="bg-bordeaux text-white text-center py-6 text-sm">
+<footer class="bg-bordeaux dark:bg-[#232326cc] text-white text-center py-6 text-sm">
   <p>&copy; 2025 Studio Legale Regalia. Tutti i diritti riservati.</p>
   <div class="mt-2 space-x-4">
     <a href="privacy-policy.html" class="underline hover:text-gray-200">Privacy Policy</a>
@@ -81,5 +149,33 @@
   </div>
 </footer>
 
+<!-- Dark mode toggle (stesso script dell'index) -->
+<script>
+  function setTheme(theme) {
+    if (theme === 'dark') {
+      document.body.classList.add('dark-mode');
+      document.getElementById('icon-sun').style.display = '';
+      document.getElementById('icon-moon').style.display = 'none';
+      document.getElementById('dark-toggle').classList.add('active');
+    } else {
+      document.body.classList.remove('dark-mode');
+      document.getElementById('icon-sun').style.display = 'none';
+      document.getElementById('icon-moon').style.display = '';
+      document.getElementById('dark-toggle').classList.remove('active');
+    }
+  }
+  (function () {
+    let theme = localStorage.getItem('theme');
+    if (!theme) {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    setTheme(theme);
+  })();
+  document.getElementById('dark-toggle').addEventListener('click', function () {
+    const isDark = !document.body.classList.contains('dark-mode');
+    setTheme(isDark ? 'dark' : 'light');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>
 </body>
 </html>
